@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Sunshine Purnia | Luxury Stay & Suites</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div><i class="fa-solid fa-location-dot"></i> Near Main Road, Purnia, Bihar</div>
+    <div>
+      <a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+      <span class="divider">|</span>
+      <a href="#"><i class="fa-solid fa-envelope"></i> info@hotelsunshinepurnia.com</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      HOTEL SUNSHINE
+      <span>P U R N I A</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#rooms">Rooms & Suites</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="btn-primary" onclick="scrollToBooking()">Book Now</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="subtitle">WELCOME TO ELEGANCE</p>
+      <h1>Experience World-Class Luxury in Purnia</h1>
+      <p class="tagline">Premium Accommodations, Exquisite Dining & Unmatched Hospitality</p>
+    </div>
+
+    <!-- Live Booking Bar -->
+    <div class="booking-bar" id="bookingBar">
+      <div class="booking-field">
+        <label><i class="fa-regular fa-calendar-check"></i> Check In</label>
+        <input type="date" id="checkIn">
+      </div>
+      <div class="booking-field">
+        <label><i class="fa-regular fa-calendar-xmark"></i> Check Out</label>
+        <input type="date" id="checkOut">
+      </div>
+      <div class="booking-field">
+        <label><i class="fa-solid fa-bed"></i> Room Type</label>
+        <select id="roomSelect">
+          <option value="deluxe" data-price="2999">Deluxe Executive (₹2,999/night)</option>
+          <option value="royal" data-price="4499">Royal Suite (₹4,499/night)</option>
+
+        </select>
+      </div>
+      <div class="booking-field">
+        <label><i class="fa-solid fa-user-group"></i> Guests</label>
+        <select id="guests">
+          <option value="1">1 Guest</option>
+          <option value="2" selected>2 Guests</option>
+          <option value="3">3 Guests</option>
+        </select>
+      </div>
+      <button class="btn-gold" onclick="openBookingModal()">Check Availability</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-text">
+      <p class="section-tag">A HAVEN OF COMFORT</p>
+      <h2>Redefining Hospitality in Bihar</h2>
+      <p>Hotel Sunshine brings world-class luxury to the heart of Purnia. Designed for business travelers and vacationing families alike, our suites combine modern elegance with authentic warmth.</p>
+      <div class="stats">
+        <div class="stat-item">
+          <h3>25+</h3>
+          <p>Luxury Rooms</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p>Concierge Service</p>
+        </div>
+        <div class="stat-item">
+          <h3>4.8 ★</h3>
+          <p>Guest Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms Section -->
+  <section id="rooms" class="rooms-section">
+    <div class="section-header">
+      <p class="section-tag">ACCOMMODATIONS</p>
+      <h2>Luxurious Rooms & Suites</h2>
+    </div>
+
+    <div class="room-grid">
+      <!-- Room 1 -->
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80');">
+          <span class="badge">Popular</span>
+        </div>
+        <div class="room-details">
+          <h3>Deluxe Executive Room</h3>
+          <p>Spacious room equipped with king-size bed, work desk, and high-speed Wi-Fi.</p>
+          <div class="amenities-icons">
+            <span><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+            <span><i class="fa-solid fa-snowflake"></i> AC</span>
+            <span><i class="fa-solid fa-tv"></i> Smart TV</span>
+          </div>
+          <div class="price-row">
+            <div class="price">₹2,999 <span>/ night</span></div>
+            <button class="btn-outline" onclick="selectRoomAndBook('Deluxe Executive', 2999)">Reserve Room</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 2 -->
+      <div class="room-card">
+        <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80');">
+          <span class="badge gold">Luxury</span>
+        </div>
+        <div class="room-details">
+          <h3>Royal Presidential Suite</h3>
+          <p>Ultra-luxurious suite featuring a separate living room, bathtub, and city views.</p>
+          <div class="amenities-icons">
+            <span><i class="fa-solid fa-bath"></i> Bathtub</span>
+            <span><i class="fa-solid fa-utensils"></i> Breakfast</span>
+            <span><i class="fa-solid fa-bell"></i> Room Service</span>
+          </div>
+          <div class="price-row">
+            <div class="price">₹4,499 <span>/ night</span></div>
+            <button class="btn-outline" onclick="selectRoomAndBook('Royal Presidential Suite', 4499)">Reserve Room</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities Section -->
+  <section id="amenities" class="amenities-section">
+    <div class="section-header">
+      <p class="section-tag">WORLD-CLASS FACILITIES</p>
+      <h2>Hotel Amenities</h2>
+    </div>
+
+    <div class="amenities-grid">
+      <div class="amenity-card">
+        <i class="fa-solid fa-utensils amenity-icon"></i>
+        <h3>Multi-Cuisine Fine Dining</h3>
+        <p>Enjoy authentic Bihari delicacies, North Indian classics, and continental cuisine prepared by top chefs.</p>
+      </div>
+
+      <div class="amenity-card">
+        <i class="fa-solid fa-glass-martini-alt amenity-icon"></i>
+        <h3>Banquet & Party Hall</h3>
+        <p>Spacious, fully air-conditioned venue ideal for weddings, corporate meets, and family celebrations.</p>
+      </div>
+
+      <div class="amenity-card">
+        <i class="fa-solid fa-square-parking amenity-icon"></i>
+        <h3>Valet Parking & Security</h3>
+        <p>Spacious underground parking with 24/7 CCTV surveillance and dedicated valet service.</p>
+      </div>
+
+      <div class="amenity-card">
+        <i class="fa-solid fa-bolt amenity-icon"></i>
+        <h3>100% Power Backup</h3>
+        <p>Uninterrupted power supply with heavy-duty power backup generators for complete comfort.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <!-- Left Info Side -->
+      <div class="contact-info">
+        <p class="section-tag">GET IN TOUCH</p>
+        <h2>Visit Hotel Sunshine</h2>
+        <p class="contact-desc">Located in the prime hub of Purnia. Reach out for direct bookings, corporate tie-ups, or event inquiries.</p>
+
+        <div class="info-list">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h4>Location Address</h4>
+              <p>Near Main Road, Purnia Junction Area, Purnia, Bihar - 854301</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Phone & WhatsApp</h4>
+              <p>+91 98765 43210 / +91 91234 56789</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>Email Support</h4>
+              <p>booking@hotelsunshinepurnia.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Quick Inquiry Form -->
+      <div class="contact-form-box">
+        <h3>Quick Inquiry</h3>
+        <form onsubmit="handleInquiryDemo(event)">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Mobile Number" required>
+          </div>
+          <div class="form-group">
+            <textarea rows="4" placeholder="Message or Event Requirement..." required></textarea>
+          </div>
+          <button type="submit" class="btn-gold btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Modal Mockup -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Confirm Your Reservation</h2>
+      <p class="modal-sub">Fast & Secure Online Checkout</p>
+      
+      <form id="bookingForm" onsubmit="handlePaymentDemo(event)">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number (WhatsApp)</label>
+          <input type="tel" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="summary-box">
+          <div><span>Room:</span> <strong id="summaryRoom">Deluxe Executive</strong></div>
+          <div><span>Total Payable:</span> <strong id="summaryPrice" class="gold-text">₹2,999</strong></div>
+        </div>
+        <button type="submit" class="btn-gold btn-full">
+          <i class="fa-solid fa-lock"></i> Pay & Confirm via Razorpay / UPI
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <!-- Royal Luxury Footer -->
+  <footer class="luxury-footer">
+    <!-- Top Newsletter Section -->
+    <div class="footer-newsletter">
+      <div class="newsletter-content">
+        <p class="section-tag">STAY CONNECTED</p>
+        <h2>Subscribe to Exclusive Offers</h2>
+        <p>Get secret deals, seasonal discounts, and luxury stay updates directly in your inbox.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to Luxury Newsletter!');">
+        <input type="email" placeholder="Enter your email address..." required>
+        <button type="submit" class="btn-gold">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="footer-grid">
+      <!-- Brand & Story -->
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          HOTEL SUNSHINE
+          <span>P U R N I A</span>
+        </div>
+        <p class="footer-desc">
+          Redefining elegance and hospitality in the heart of Bihar. Experience world-class suites, gourmet dining, and premier event spaces.
+        </p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Navigation -->
+      <div class="footer-col">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Our Hotel</a></li>
+          <li><a href="#rooms"><i class="fa-solid fa-chevron-right"></i> Rooms & Suites</a></li>
+          <li><a href="#amenities"><i class="fa-solid fa-chevron-right"></i> Luxury Amenities</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact & Location</a></li>
+        </ul>
+      </div>
+
+      <!-- Hotel Policies / Highlights -->
+      <div class="footer-col">
+        <h4 class="footer-title">Guest Services</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fa-solid fa-clock"></i> 24/7 Front Desk</a></li>
+          <li><a href="#"><i class="fa-solid fa-shield-halved"></i> Safe & Secure Booking</a></li>
+          <li><a href="#"><i class="fa-solid fa-utensils"></i> In-Room Dining</a></li>
+          <li><a href="#"><i class="fa-solid fa-banquet"></i> Banquet Inquiries</a></li>
+          <li><a href="#"><i class="fa-solid fa-ban"></i> Cancellation Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Direct Contact & Map Access -->
+      <div class="footer-col contact-col">
+        <h4 class="footer-title">Hotel Location</h4>
+        <p class="loc-text"><i class="fa-solid fa-location-dot"></i> Near Main Road, Purnia Junction Area, Purnia, Bihar 854301</p>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info@hotelsunshinepurnia.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Line -->
+    <div class="footer-bottom">
+      <p>© 2026 Hotel Sunshine Purnia. All Rights Reserved.</p>
+      <p class="agency-credit">Crafted with Luxury by <span>Jangir IT Solution</span></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
